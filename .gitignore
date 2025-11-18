@@ -1,1 +1,11 @@
+# Environments
+venv
+
+# Archivos autogenerados
+__pycache__
+parsetab.py
+parser.out
+
+# Pruebas
 error.txt
+prueba.txt
