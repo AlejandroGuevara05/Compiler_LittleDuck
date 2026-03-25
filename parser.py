@@ -1403,3 +1403,85 @@ if __name__ == '__main__':
                 print(f"{i}. {error}")
 
         print("=" * 80)
+
+    """
+    # Reporte de cuadruplos generados
+    if ds.quad_list:
+        print("\n" + "=" * 80)
+        print("TABLA DE QUADRUPLES CON TIPO DE RESULTADO:")
+        print("=" * 80)
+        print(
+            f"{'#':<5} {'Operador':<10} {'Arg1':<10} {'Arg2':<10} {'Resultado':<12} {'Tipo':<10}"
+        )
+        print("-" * 80)
+
+        for q in ds.quad_list:
+            num, op, arg1, arg2, result = q
+
+            if result in ds.temp_types:
+                tipo_resultado = ds.temp_types[result]
+            else:
+                tipo_encontrado = None
+                for scope_vars in names.values():
+                    if isinstance(scope_vars, dict) and result in scope_vars:
+                        tipo_encontrado = scope_vars[result]
+                        break
+
+                if tipo_encontrado:
+                    tipo_resultado = tipo_encontrado
+                elif op in ['gotof', 'goto']:
+                    tipo_resultado = ' '
+                else:
+                    tipo_resultado = ' '
+
+            print(
+                f"{num:<5} {op:<10} {str(arg1):<10} {str(arg2):<10} {str(result):<12} {tipo_resultado:<10}"
+            )
+
+        print("=" * 80)
+
+    # Reporte de directorio de funciones
+    if ds.func_dir:
+        print("\n" + "=" * 80)
+        print("DIRECTORIO DE FUNCIONES:")
+        print("=" * 80)
+        print(
+            f"{'Funcion':<15} {'Tipo':<10} {'Start':<10} {'Params':<10} {'Vars Loc':<10} {'Address':<10}"
+        )
+        print("-" * 80)
+        for func_name, func_info in ds.func_dir.items():
+            ret_type = func_info.get('return_type', '-')
+            start = func_info.get('start_quad', '-')
+            params = func_info.get('n_params', 0)
+            local_vars = func_info.get('n_local_vars', 0)
+            address = func_info.get('address', '-')
+            print(
+                f"{func_name:<15} {ret_type:<10} {start:<10} {params:<10} {local_vars:<10} {address:<10}"
+            )
+        print("=" * 80)
+
+    # Reporte de tabla de simbolos
+    if names and any(names.values()):
+        print("\n" + "=" * 80)
+        print("TABLA DE SIMBOLOS:")
+        print("=" * 80)
+        print(f"{'Variable':<15} {'Tipo':<10} {'Scope':<10} {'Direccion':<10}")
+        print("-" * 80)
+        for scope, variables in names.items():
+            for var_name, var_data in variables.items():
+                var_type, var_dir = var_data
+                print(f"{var_name:<15} {var_type:<10} {scope:<10} {var_dir:<10}")
+        print("=" * 80)
+    """
+
+    # Escribir reporte en archivo txt
+    with open("input_vm.txt", 'w', encoding='utf-8') as out:
+        for key, num in tabla_constantes.items():
+            out.write(f"{key}\t{num}\n")
+        out.write("\n")
+        for key, num in vars_contador.items():
+            out.write(f"{key}\t{num}\n")
+        out.write("\n")
+        for q in ds.quad_list:
+            num, op, arg1, arg2, result = q
+            out.write(f"{num}\t{op}\t{str(arg1)}\t{str(arg2)}\t{str(result)}\n")
