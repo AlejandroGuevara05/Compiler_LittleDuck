@@ -1,0 +1,10 @@
+.venv
+__pycache__
+
+# Auto generated files
+parser.out
+parsetab.py
+
+# Test files
+prueba.txt
+error.txt
