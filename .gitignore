@@ -1,11 +1,13 @@
+# Entorno virtual
 .venv
+
+# Cache
 __pycache__
 
-# Auto generated files
+# Archivos generados automaticamente
 parser.out
 parsetab.py
 
-# Test files
+# Input files
 test.txt
-error.txt
 input_vm.txt
