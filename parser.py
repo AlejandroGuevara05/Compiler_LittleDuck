@@ -1356,7 +1356,7 @@ def p_error(t):
 if __name__ == '__main__':
     # Configurar archivo de entrada
     base_dir = os.path.dirname(__file__)
-    default_path = os.path.join(base_dir, "Caso.txt")
+    default_path = os.path.join(base_dir, "test.txt")
     input_path = sys.argv[1] if len(sys.argv) > 1 else default_path
 
     # Leer archivo
