@@ -1,0 +1,56 @@
+program proquacks;
+var n, contador : int ;
+  j , i : float;
+  s : string; 
+
+void fact (n : int, a : int)
+[  var b : int; 
+
+   {  if (n > 1 )
+      {  b = a * n;
+         fact (n-1, b);  
+      }
+      else
+      {  print(a);   }; 
+   }
+];
+
+
+void some_other( n : int )
+[  var xf : float;
+
+   {  n = 5; 
+      print("hello "); 
+      xf = 7.1;
+
+      fact(3, 1);
+   } ]
+;
+
+
+main 
+{  n = 5;
+   fact(n, 1);
+
+   fact(n+1, 1);
+
+   contador = 0;
+
+    do {
+
+      print(3, "w", 4+5, 4.5);
+      contador = contador + 1;
+    }while( contador < 3  );
+
+
+    if ( 3 >= 8)
+    {
+      print("texto ");
+      n = 58 + 9 * 5;
+    }
+    else
+    {   print("xsxsxs", (5) );
+
+    };
+}
+end

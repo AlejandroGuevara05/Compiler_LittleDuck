@@ -1,0 +1,62 @@
+program test;
+
+var
+    a, b, c : int;
+    texto : string;
+
+void saludar() [
+    var
+        saludo : string;
+    {
+        saludo = "Hola desde funcion!";
+        print(saludo);
+    }
+];
+
+void calcularCuadrado(num : int) [
+    var
+        resultado : int;
+    {
+        resultado = num * num;
+        print("El cuadrado de", num, "es", resultado);
+    }
+];
+
+void compararNumeros(n1 : int, n2 : int) [
+    var
+        mayor : int;
+    {
+        if (n1 > n2) {
+            mayor = n1;
+            print(n1, "es mayor que", n2);
+        } else {
+            if (n1 < n2) {
+                mayor = n2;
+                print(n2, "es mayor que", n1);
+            } else {
+                print("Los numeros son iguales:", n1);
+            };
+        };
+    }
+];
+
+main {
+    a = 5;
+    b = 3;
+    c = 7;
+    texto = "Test de funciones";
+
+    saludar();
+
+    print("Calculando cuadrados:");
+    calcularCuadrado(a);
+    calcularCuadrado(b);
+    calcularCuadrado(c);
+
+    print("Comparando numeros:");
+    compararNumeros(a, b);
+    compararNumeros(b, c);
+    compararNumeros(a, a);
+
+}
+end
