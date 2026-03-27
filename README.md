@@ -3,6 +3,8 @@ Compiler for the mini language "Little Duck"
 
 ![LittleDuck Diagram](./LittleDuckGramatic.png)
 
+In the `Examples` folder, you can find sample programs that demonstrate the structure of the language.
+
 ## Instructions to Run the Code
 
 ### Prerrequisites
